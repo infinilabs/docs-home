@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header/index";
 import Footer from "@/components/Footer/index";
 
@@ -12,16 +13,32 @@ export default function Home() {
       <div className="w-full mt-16 flex justify-center">
         <div className="max-w-[1320px] grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           <div className="rounded-lg bg-gray-900/70 p-8 flex flex-col justify-start">
-                <div className="text-gray-300 text-xl font-medium pb-2">
-                  INFINI Gateway
+                <div className="pb-2">
+                  <Link href={"https://docs.infinilabs.com/gateway/main/"}>
+                    <Image
+                      width={116}
+                      height={36}
+                      alt="INFINI Gateway"
+                      src="/assets/logo/Gateway.svg"
+                      className=""
+                    />
+                  </Link>
                 </div>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/gateway/main/docs/getting-started/install/"}>· Installing the Gateway</Link>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/gateway/main/docs/getting-started/install/#system-service"}>· How to Install Gateway as a System Service</Link>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/gateway/main/docs/getting-started/configuration/"}>· Configuring the Gateway</Link>
               </div>
               <div className="rounded-lg bg-gray-900/70 p-8 flex flex-col justify-start">
-                <div className="text-gray-300 text-xl font-medium pb-2">
-                  INFINI Console
+                <div className="pb-2">
+                  <Link href={"https://docs.infinilabs.com/console/main/"}>
+                    <Image
+                      width={116}
+                      height={36}
+                      alt="INFINI Console"
+                      src="/assets/logo/Console.svg"
+                      className=""
+                    />
+                  </Link>
                 </div>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/console/main/docs/getting-started/install/"}>· Installing the Console</Link>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/console/main/docs/getting-started/docker/"}>· Container deployment</Link>
