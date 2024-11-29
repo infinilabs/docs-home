@@ -1,0 +1,51 @@
+name: Build docs and push to the docs repo
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      # Build the documents, build target will be placed under the `./out` directory
+      - name: Build
+        run: npm run build
+
+      - name: Check out the `docs` repo
+        uses: actions/checkout@v4
+        with:
+          repository: infinilabs/docs
+          path: docs-output # It will be cloned to the `./docs-output` directory
+          token: ${{ secrets.DOCS_DEPLOYMENT_TOKEN }}
+
+      - name: Push the contents under dir `out`
+        working-directory: docs-output # set the PWD for all the scripts in this step
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          cp -R ../out/* .
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "diff to commit:"
+            git status
+            git add .
+            git commit -m "docs updated by commits to the doc-home repo"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi
