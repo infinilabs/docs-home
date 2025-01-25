@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <div className="rounded-lg bg-gray-900/70 p-8 flex flex-col justify-start">
                 <div className="pb-2">
-                  <Link href={"https://docs.infinilabs.com/loadgen/main/"}>
+                  <Link href={"https://docs.infinilabs.com/loadgen/main/docs/getting-started/install/"}>
                     <Image
                       width={116}
                       height={36}
@@ -57,7 +57,23 @@ export default function Home() {
                   </Link>
                 </div>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/loadgen/main/docs/getting-started/install/"}>· Installing the Loadgen</Link>
-                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/loadgen/main/en/docs/release-notes/"}>· Release Notes</Link>
+                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/loadgen/main/en/docs/release-notes/"}>· Release notes</Link>
+          </div>
+          <div className="rounded-lg bg-gray-900/70 p-8 flex flex-col justify-start">
+                <div className="pb-2">
+                  <Link href={"https://docs.infinilabs.com/agent/main/docs/getting-started/install/"}>
+                    <Image
+                      width={116}
+                      height={36}
+                      alt="INFINI Agent"
+                      src="/assets/logo/Agent.svg"
+                      className=""
+                    />
+                  </Link>
+                </div>
+                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/agent/main/docs/getting-started/install/"}>· Installing the Agent</Link>
+                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/agent/main/docs/configuration/processors/es_cluster_health/"}>· Collect the cluster health metrics</Link>
+                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/agent/main/docs/configuration/processors/es_logs_processor/"}>· Collect the cluster log files</Link>
           </div>
           <div className="rounded-lg bg-gray-900/70 p-8 flex flex-col justify-start">
                 <div className="pb-2">
@@ -81,14 +97,14 @@ export default function Home() {
                     <Image
                       width={116}
                       height={36}
-                      alt="INFINI coco"
+                      alt="Coco AI"
                       src="/assets/logo/Coco.svg"
                       className=""
                     />
                   </Link>
                 </div>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/coco-server/main/docs/getting-started/install/"}>· Getting started</Link>
-                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/coco-server/main/docs/references/"}>· API Reference</Link>
+                <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/coco-server/main/docs/references/"}>· API reference</Link>
                 <Link className="text-gray-400 font-normal text-sm pt-4" href={"https://docs.infinilabs.com/coco-server/main/docs/references/connectors/google_drive/"}>· Connect to your google drive</Link>
           </div>
         </div>
