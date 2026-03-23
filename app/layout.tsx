@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from 'next/script'
 import "./globals.css";
 
 const geistSans = localFont({
@@ -30,6 +31,18 @@ export default function RootLayout({
       >
         {children}
       </body>
+
+      <Script id="baidu">
+        {`
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?64b9322783bb21716d701b15fb0b1e82";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        `}
+      </Script>
     </html>
   );
 }
