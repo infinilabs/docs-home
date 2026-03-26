@@ -2,7 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
+declare global {
+  interface Window {
+    NoticeWidget?: {
+      init: (options: {
+        locales: Record<string, string>;
+        locale: string;
+        theme: string;
+      }) => void;
+    };
+  }
+}
 
 export default function Header() {
 
@@ -24,6 +36,21 @@ export default function Header() {
           </Link>
         </div>
       </nav>
+
+       <Script
+        src="https://infinilabs.com/notice-widget/notice-widget.umd.cjs"
+        strategy="afterInteractive"
+        onLoad={() => {
+          window.NoticeWidget?.init({
+            locales: {
+              "zh-CN": "https://infinilabs.com/notice-widget/locales/zh-CN.json",
+              "en-US": "https://infinilabs.com/notice-widget/locales/en-US.json",
+            },
+            locale: "en-US",
+            theme: "dark",
+          });
+        }}
+      />
     </header>
   );
 }
